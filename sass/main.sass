@@ -1,0 +1,27 @@
+@import './_resets'
+@import './_variables'
+
+@function fontWeight($weight-name)
+    @return map-get($font-weights,$weight-name)
+
+body
+    font: 100% $font-stack
+    font-weight: map-get($font-weights,bold)
+    background: $primary-color
+    color: $text-color
+
+.main
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 80%
+    margin: 0 auto
+
+    #{&}__paragraph
+        //font-weight: map-get($font-weights, regular )
+        font-weight: fontWeight(bold)
+        &:hover
+            color: pink
+
+    // ampersand =  the parent
+    // #{} string interpolation
